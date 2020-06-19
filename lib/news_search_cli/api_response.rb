@@ -18,7 +18,8 @@ class ApiResponse
 
 	def generate_search_url(page=1)
 		# eample result: https://content.guardianapis.com/search?q=debate%20AND%20economy&tag=politics/politics&from-date=2014-01-01&api-key=test
-		search_terms = self.search_keywords.map{|keyword| keyword}.join("%20AND%20")
+    search_terms = self.search_keywords.map{|keyword| keyword}.join("%20AND%20")
+    #from what I understand the %20 is automatically placed into white space. 
 		BASE_PATH + search_terms + "&api-key=#{API_KEY}&page=#{page}"
 	end
 
